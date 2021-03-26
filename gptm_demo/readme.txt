@@ -1,0 +1,1 @@
+Demo project to show count-up, count-down modes in periodic configuration of general-purpose timer.
