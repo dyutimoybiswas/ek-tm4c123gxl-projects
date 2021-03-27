@@ -1,0 +1,1 @@
+To set 3 colors turquoise, magenta and orange in RGB on-board LED using PWM.
