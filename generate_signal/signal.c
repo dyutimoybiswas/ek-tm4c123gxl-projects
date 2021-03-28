@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "signal.h"
 
 unsigned volatile int is_high = 1;

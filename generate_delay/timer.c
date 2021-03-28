@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "generatedelay.h"
 
 unsigned volatile int seconds = 0;

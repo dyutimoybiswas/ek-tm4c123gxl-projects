@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "ports.h"
 
 unsigned volatile int status = 0;

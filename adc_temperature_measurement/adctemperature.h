@@ -1,7 +1,8 @@
-#include "../generate_delay/generatedelay.h"
-
 #ifndef __ADCTEMPERATURE_H__
 #define __ADCTEMPERATURE_H__
+
+#include "../generate_delay/generatedelay.h"
+#include "TM4C123GH6PM.h"
 
 #define BYPASS (1U << 11)
 

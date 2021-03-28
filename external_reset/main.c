@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "reset.h"
 
 void Reset_Handler(){

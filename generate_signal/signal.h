@@ -1,6 +1,8 @@
 #ifndef __SIGNAL_H__
 #define __SIGNAL_H__
 
+#include "TM4C123GH6PM.h"
+
 #define GPIO_PORTF (1U << 5)
 #define LED_BLUE (1U << 2)
 
