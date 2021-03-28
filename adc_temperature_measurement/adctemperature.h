@@ -25,8 +25,8 @@
 #define MULTIPLIER 75
 #define RESOLUTION 4096
 #define VOLTAGE_RANGE 3.29
-#define LOWER_TEMPERATURE_LIMIT -65		//-65ï¿½C
-#define UPPER_TEMPERATURE_LIMIT 150		//150ï¿½C
+#define LOWER_TEMPERATURE_LIMIT -65		//-65°C
+#define UPPER_TEMPERATURE_LIMIT 150		//150°C
 
 void adc_init(void);
 void led_init(void);
