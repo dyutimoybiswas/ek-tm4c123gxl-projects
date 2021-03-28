@@ -1,6 +1,8 @@
 #ifndef __CONSTANTS_H__
 #define __CONSTANTS_H__
 
+#include "TM4C123GH6PM.h"
+
 #define PORTF (1U << 5)
 #define LED_BLUE (1U << 2)
 #define CLK_FREQ 16000000U

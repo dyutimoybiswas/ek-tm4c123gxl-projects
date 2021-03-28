@@ -1,7 +1,8 @@
-#include "../generate_delay/generatedelay.h"
-
 #ifndef __ADCTEMPERATURE_H__
 #define __ADCTEMPERATURE_H__
+
+#include "../generate_delay/generatedelay.h"
+#include "TM4C123GH6PM.h"
 
 #define BYPASS (1U << 11)
 
@@ -24,8 +25,8 @@
 #define MULTIPLIER 75
 #define RESOLUTION 4096
 #define VOLTAGE_RANGE 3.29
-#define LOWER_TEMPERATURE_LIMIT -65		//-65°C
-#define UPPER_TEMPERATURE_LIMIT 150		//150°C
+#define LOWER_TEMPERATURE_LIMIT -65		//-65ï¿½C
+#define UPPER_TEMPERATURE_LIMIT 150		//150ï¿½C
 
 void adc_init(void);
 void led_init(void);

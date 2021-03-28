@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "adcvoltage.h"
 
 volatile double voltage_value = 0;

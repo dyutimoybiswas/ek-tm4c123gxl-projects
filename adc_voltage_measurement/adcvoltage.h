@@ -1,6 +1,8 @@
 #ifndef __ADCVOLTAGE_H__
 #define __ADCVOLTAGE_H__
 
+#include "TM4C123GH6PM.h"
+
 #define BYPASS (1U << 11)
 
 #define GPIO_PORTE (1U << 4)

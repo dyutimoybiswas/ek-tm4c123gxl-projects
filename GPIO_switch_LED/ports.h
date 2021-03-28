@@ -1,6 +1,8 @@
 #ifndef __PORTS_H__
 #define __PORTS_H__
 
+#include "TM4C123GH6PM.h"
+
 #define PA7 (1U << 7)
 #define PB4 (1U << 4)
 #define SYS_CLK 16000000U

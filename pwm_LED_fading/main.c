@@ -1,12 +1,4 @@
-#include "TM4C123GH6PM.h"
 #include "pwm_constants.h"
-
-/* to control brightness of on-board red LED from minimum to maximum. */
-
-void red_init(void);
-void HardFault_Handler(void);
-void delay_msec(unsigned int);
-void set_cmp(void);
 
 unsigned volatile int duty_cycle_r = 0;
 

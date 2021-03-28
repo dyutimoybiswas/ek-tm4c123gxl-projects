@@ -1,4 +1,3 @@
-#include "TM4C123GH6PM.h"
 #include "adctemperature.h"
 #include "../generate_delay/timer.c"
 
