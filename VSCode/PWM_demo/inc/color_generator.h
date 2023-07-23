@@ -9,7 +9,7 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/pwm.h"
 
-#define FREQ 25000                      // PWM frequency - 25 kHz
+#define FREQ 25000                      // PWM generator block frequency - 25 kHz
 #define RED_LED GPIO_PIN_1
 #define BLUE_LED GPIO_PIN_2
 #define GREEN_LED GPIO_PIN_3
