@@ -25,7 +25,7 @@ void setup()
     // register interrupts
     IntEnable(INT_UART0_TM4C123);
 
-    // enable gpio port B
+    // enable gpio port A
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
     while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA))
     {
