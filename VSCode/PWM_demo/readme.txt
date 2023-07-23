@@ -1,0 +1,1 @@
+Code to generate colors using on-board RGB LEDs and PWM.
