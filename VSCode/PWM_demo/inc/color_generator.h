@@ -13,13 +13,8 @@
 #define RED_LED GPIO_PIN_1
 #define BLUE_LED GPIO_PIN_2
 #define GREEN_LED GPIO_PIN_3
-#define GREEN_WIFI_STARTED 102 / 255
-#define BLUE_HTTP_STARTED 51 / 255
-#define BLUE_WIFI_CONNECTED 153 / 255
 
-void setup();
-void init_wifi_started();
-void init_http_started();
-void init_wifi_connected();
+void setup(void);
+void generate_color(uint8_t, uint8_t, uint8_t);
 
 #endif

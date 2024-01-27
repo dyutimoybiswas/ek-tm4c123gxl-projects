@@ -3,9 +3,9 @@
 int main(int argc, char const *argv[])
 {
     setup();
-    // init_wifi_started();
-    // init_http_started();
-    init_wifi_connected();
+
+    // test colors with random values for red, green and blue.
+    generate_color(204, 253, 51);
     
     return 0;
 }
