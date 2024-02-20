@@ -1,1 +1,0 @@
-Uses SysTick timer to blink on-board LED.
