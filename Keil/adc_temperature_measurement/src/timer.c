@@ -9,7 +9,7 @@ void set_seconds(unsigned int m)
 	timer_init();
 }
 
-void timer_init()
+void timer_init(void)
 {
 	SYSCTL->RCGCTIMER |= R0;
 	TIMER0->CTL &= ~TAEN;
@@ -24,7 +24,7 @@ void timer_init()
 	TIMER0->CTL |= TAEN;
 }
 
-void TIMER0A_Handler()
+void TIMER0A_Handler(void)
 {
 	handler_counter++;
 	if(is_indicator_enabled)
@@ -49,7 +49,7 @@ void TIMER0A_Handler()
 	}
 }		
 
-void use_indicator()
+void use_indicator(void)
 {
 	is_indicator_enabled = 1;
 	SYSCTL->RCGCGPIO |= GPIO_PORTF;
@@ -57,7 +57,7 @@ void use_indicator()
 	GPIOF->DEN |= LED_GREEN;
 }
 
-void disable_indicator()
+void disable_indicator(void)
 {
 	is_indicator_enabled = 0;
 	SYSCTL->RCGCGPIO &= ~GPIO_PORTF;
@@ -65,7 +65,7 @@ void disable_indicator()
 	GPIOF->DEN &= ~LED_GREEN;
 }
 
-void HardFault_Handler()
+void HardFault_Handler(void)
 {
  	//added to prevent going into hardfault during execution
 }

@@ -2,14 +2,14 @@
 #include "adc_temperature.h"
 
 
-void led_init()
+void led_init(void)
 {
 	SYSCTL->RCGCGPIO |= GPIO_PORTF;
 	GPIOF->DIR |= (LED_RED | LED_GREEN | LED_BLUE);
 	GPIOF->DEN |= (LED_RED | LED_GREEN | LED_BLUE);
 }
 
-void adc_init()
+void adc_init(void)
 {
 	
 	SYSCTL->RCGCADC = R0;
@@ -25,7 +25,7 @@ void adc_init()
 	ADC0->ACTSS |= ASEN3;
 }
 
-int main()
+int main(void)
 {
 
 	led_init();
