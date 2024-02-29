@@ -22,7 +22,8 @@ void signal_init(void)
 
 void TIMER0A_Handler(void)
 {
-	if(TIMER0->MIS & TATOMIS){
+	if(TIMER0->MIS & TATOMIS)
+	{
 		if(is_high)
 		{
 			GPIOF->DATA |= LED_BLUE;
