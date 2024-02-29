@@ -39,39 +39,23 @@
 
 void timer_init(void);
 void set_seconds(unsigned int);
-// void set_miliseconds(unsigned int);
 void use_indicator(void);				//green LED stays ON for specified time
-// void use_flag(void);					//sets flag variable at timeout
-// void clear_flag(void);
-// int get_flag(void);					    //to get value of flag variable
 void disable_indicator(void);
-// void set_LED_GREEN(void);
-// void clear_LED_GREEN(void);
-// void disable_timer(void);				//stops timer from counting
 void clear_handler_counter(void);
 void TIMER0A_Handler(void);
-// void HardFault_Handler(void);
+void HardFault_Handler(void);
 void adc_init(void);
 void led_init(void);
-// void set_LED_RED(void);
-// void clear_LED_RED(void);
-// void set_LED_BLUE(void);
-// void clear_LED_BLUE(void);
-// void set_LED_GREEN(void);
-// void clear_LED_GREEN(void);
-// void use_flag(void);
-// int get_flag(void);
-// void clear_flag(void);
 
-extern unsigned volatile int seconds;
-extern unsigned volatile int handler_counter;
-extern volatile int is_seconds;
-extern volatile int is_indicator_enabled;
-extern volatile int is_flag_used;
-extern volatile int flag;
+static unsigned volatile int seconds = 0;
+static unsigned volatile int handler_counter = 0;
+static volatile int is_seconds = 0;
+static volatile int is_indicator_enabled = 0;
+static volatile int flag = 0;
 
-extern volatile long double output_temperature;
-extern volatile long double avg_output_temperature;
-extern volatile long counter;
+static volatile long double output_temperature = 0;
+static volatile long double avg_output_temperature = 0;
+static volatile long counter = 0;
+static volatile int is_flag_used = 0;
 
 #endif
