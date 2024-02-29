@@ -21,9 +21,7 @@
 
 void set_milliseconds(unsigned int);
 
-static unsigned volatile int miliseconds = 0;
-#endif
-
+static unsigned volatile int milliseconds = 0;
 #elif defined(SECONDS)
 #define SECONDS_PRESCALE        245
 #define SECONDS_CONSTANT        1.00352
