@@ -6,7 +6,6 @@ int main(void)
 
 	#if defined(MILLISECONDS)
 	set_milliseconds(MILLISECONDS_VALUE);
-	#endif
 	#elif defined(SECONDS)
 	set_seconds(SECONDS_VALUE);
 	#endif
