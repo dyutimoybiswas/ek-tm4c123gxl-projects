@@ -1,22 +1,16 @@
+#include <stdbool.h>
 #include "adc_temperature.h"
 
-volatile long double output_temperature = 0;
-volatile long double avg_output_temperature = 0;
-volatile long counter = 0;
 
-volatile int is_flag_used = 0;
-
-void clear_LED_RED(){
-	GPIOF->DATA &= ~LED_RED;
-}
-
-void led_init(){
+void led_init()
+{
 	SYSCTL->RCGCGPIO |= GPIO_PORTF;
 	GPIOF->DIR |= (LED_RED | LED_GREEN | LED_BLUE);
 	GPIOF->DEN |= (LED_RED | LED_GREEN | LED_BLUE);
 }
 
-void adc_init(){
+void adc_init()
+{
 	
 	SYSCTL->RCGCADC = R0;
 	
@@ -31,7 +25,8 @@ void adc_init(){
 	ADC0->ACTSS |= ASEN3;
 }
 
-int main(){
+int main()
+{
 
 	led_init();
 	is_flag_used = 1;
@@ -44,7 +39,8 @@ int main(){
 		adc_init();
 	}
 
-	while(1){
+	while(true)
+	{
 		ADC0->PSSI |= SS3;
 		if(ADC0->RIS & INR3)
 		{
