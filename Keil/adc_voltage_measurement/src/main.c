@@ -2,7 +2,7 @@
 #include "adc_voltage.h"
 
 
-void adc_init()
+void adc_init(void)
 {
 	SYSCTL->RCGCADC = R0;
 	SYSCTL->RCGCGPIO = GPIO_PORTE;
@@ -17,7 +17,7 @@ void adc_init()
 	ADC0->ACTSS |= ASEN3;
 }
 
-int main()
+int main(void)
 {
 	if(SYSCTL->RCC & ~BYPASS)
 	{
