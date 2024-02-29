@@ -29,8 +29,8 @@ int main(void)
 		ADC0->PSSI |= SS3;		
 		if(ADC0->RIS & INR3)
 		{
-			voltage_difference = ((double)(max_adc - ADC0->SSFIFO3) / adc_resolution ) * max_voltage;
-			voltage_value = max_voltage - voltage_difference;			//capture measured voltage
+			voltage_difference = ((double)(MAX_ADC - ADC0->SSFIFO3) / ADC_RESOLUTION ) * MAX_VOLTAGE;
+			voltage_value = MAX_VOLTAGE - voltage_difference;			//capture measured voltage
 			ADC0->ISC |= IN3;
 		}
 	}
