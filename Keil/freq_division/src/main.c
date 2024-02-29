@@ -12,7 +12,7 @@ void init(void)
 	/* configure system tick counter. */
 	SysTick->LOAD = NO_OF_PULSES - 1U;
 	SysTick->VAL = 0;
-	SysTick->CTRL = ENABLE | INTEN | CLK_SRC;
+	SysTick->CTRL = ENABLE | INTEN | CLKSRC;
 }
 
 void SysTick_Handler(void)
