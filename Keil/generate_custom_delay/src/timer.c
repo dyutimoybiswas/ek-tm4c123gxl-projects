@@ -8,11 +8,10 @@ void disable_timer(void)
 #if defined(SECONDS)
 void set_seconds(unsigned int m)
 {
-	clear_handler_counter();
+	handler_counter = 0;
 	seconds = (unsigned int)((m * SECONDS_CONSTANT) + 1);
 	timer_init();
 }
-#endif
 #elif defined(MILLISECONDS)
 void set_milliseconds(unsigned int m)
 {
@@ -29,7 +28,6 @@ void timer_init(){
 	TIMER0->TAMR |= (ONE_SHOT | TACDIR);			//ONE SHOT mode, count up
 	#if defined(SECONDS)
 	TIMER0->TAPR = SECONDS_PRESCALE - 1;
-	#endif
 	#elif defined(MILLISECONDS)
 	TIMER0->TAPR = 0;
 	#endif
@@ -54,9 +52,8 @@ void TIMER0A_Handler(void)
 			GPIOF->DATA &= ~LED_GREEN;
 		}
 	}
-	#endif
 	#elif defined(MILLISECONDS)
-	if (3 * miliseconds <= handler_counter)
+	if (3 * milliseconds <= handler_counter)
 	{
 		if(is_indicator_enabled)
 		{
