@@ -1,20 +1,27 @@
+#include <stdbool.h>
 #include "pattern.h"
 
-void init(void){
+void init(void)
+{
 	SYSCTL->RCGCGPIO = (1U << 5);
 	SYSCTL->GPIOHBCTL = (1U << 5);
 	GPIOF_AHB->DIR = (LED_RED | LED_BLUE | LED_GREEN);
 	GPIOF_AHB->DEN = (LED_RED | LED_BLUE | LED_GREEN);
 }
 
-void delay(void){
+void delay(void)
+{
 	for(volatile int i = 0; i < 5000000; i++);
 }
 
-int main(void){
+int main(void)
+{
 	init();
-	while(1){
-		switch(state){
+
+	while(true)
+	{
+		switch(state)
+		{
 			case OFF:
 				delay();
 				GPIOF_AHB->DATA = 0;
