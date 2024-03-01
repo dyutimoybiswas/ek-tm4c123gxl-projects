@@ -1,7 +1,6 @@
 #ifndef DEMO_H
 #define DEMO_H
 
-// #include "TM4C123.h"
 #include "TM4C123GH6PM.h"
 
 #define LED_BLUE    1U << 2
