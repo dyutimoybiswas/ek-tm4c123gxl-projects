@@ -3,13 +3,7 @@
 int main(void)
 {
 	use_indicator();
-
-	#if defined(MILLISECONDS)
-	set_milliseconds(MILLISECONDS_VALUE);
-	#elif defined(SECONDS)
-	set_seconds(SECONDS_VALUE);
-	#endif
-
+	set_delay(VALUE);
 	disable_timer();
 	
 	while(true)
