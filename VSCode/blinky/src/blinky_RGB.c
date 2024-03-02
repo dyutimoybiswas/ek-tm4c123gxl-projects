@@ -43,6 +43,4 @@ int main(void)
         GPIOPinWrite(GPIO_PORTF_AHB_BASE, GPIO_PIN_3, 0);
         delay();
     }
-    
-    return 0;
 }
