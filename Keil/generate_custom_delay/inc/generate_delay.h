@@ -16,25 +16,19 @@
 #define LED_GREEN               1U << 3
 
 #if defined(MILLISECONDS)
-#define MILLISECONDS_CONSTANT   4.096
-#define MILLISECONDS_VALUE      100
-
-void set_milliseconds(unsigned int);
-
-static unsigned volatile int milliseconds = 0;
+#define CONSTANT   							4.096
+#define VALUE      							100
 #elif defined(SECONDS)
 #define SECONDS_PRESCALE        245
-#define SECONDS_CONSTANT        1.00352
-#define SECONDS_VALUE           30
-
-void set_seconds(unsigned int);
-
-static unsigned volatile int seconds = 0;
+#define CONSTANT        				1.00352
+#define VALUE           				30
 #endif
 
 static unsigned volatile int handler_counter = 0;
+static unsigned volatile int delay 					 = 0;
 static bool is_indicator_enabled             = false;
 
+void set_delay(unsigned int);
 void timer_init(void);
 void use_indicator(void);				//green LED stays ON for specified time
 void disable_indicator(void);
