@@ -9,10 +9,9 @@ void HardFault_Handler(void)
 
 /* PF1, PF2 and PF3 to be used and corresponding PWM signals are M1PWM5, M1PWM6 and M1PWM7.
 		So PWM1 module is clocked by setting RCGCPWM. */
-
-#if defined(TURQUOISE)
-void set_turquoise(void)
+void set_color(void)
 {
+	#if defined(TURQUOISE)
 	SYSCTL->RCGCPWM = (1U << 1);
 	SYSCTL->RCGC2 = (1U << 5);			
 	GPIOF->AFSEL &= 0;
@@ -35,10 +34,7 @@ void set_turquoise(void)
 	PWM1->_2_CTL = 1U;
 	
 	PWM1->ENABLE |= PWM5_EN;
-}
-#elif defined(MAGENTA)
-void set_magenta(void)
-{
+	#elif defined(MAGENTA)
 	SYSCTL->RCGCPWM = (1U << 1);
 	SYSCTL->RCGC2 = (1U << 5);			
 	GPIOF->DEN = (LED_RED | LED_BLUE);
@@ -65,10 +61,7 @@ void set_magenta(void)
 	PWM1->_3_CTL |= 1U;
 	
 	PWM1->ENABLE = (PWM5_EN | PWM6_EN);				//PWM5, PWM6 enabled
-}
-#elif defined(ORANGE)
-void set_orange(void)
-{
+	#elif defined(ORANGE)
 	SYSCTL->RCGCPWM = (1U << 1);
 	SYSCTL->RCGC2 = (1U << 5);			
 	GPIOF->DEN = (LED_RED | LED_GREEN);
@@ -88,18 +81,12 @@ void set_orange(void)
 	PWM1->_3_CTL |= 1U;
 	
 	PWM1->ENABLE = (PWM7_EN);						//PWM7 enabled
-}
 #endif
+}
 
 int main(void)
 {
-	#if defined(TURQUOISE)
-	set_turquoise();
-	#elif defined(MAGENTA)
-	set_magenta();
-	#elif defined(ORANGE)
-	set_orange();
-	#endif
+	set_color();
 	
 	while(true)
 	{
