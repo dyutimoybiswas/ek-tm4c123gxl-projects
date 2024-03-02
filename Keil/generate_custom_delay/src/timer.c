@@ -5,26 +5,17 @@ void disable_timer(void)
 	TIMER0->CTL &= ~TAEN;
 }
 
-#if defined(SECONDS)
-void set_seconds(unsigned int m)
+void set_delay(unsigned int m)
 {
 	handler_counter = 0;
-	seconds = (unsigned int)((m * SECONDS_CONSTANT) + 1);
+	delay = (unsigned int)((m * CONSTANT) + 1);
 	timer_init();
 }
-#elif defined(MILLISECONDS)
-void set_milliseconds(unsigned int m)
-{
-	handler_counter = 0;
-	milliseconds = (unsigned int)((m / MILLISECONDS_CONSTANT));
-	timer_init();
-}
-#endif
 
 void timer_init(){
 	SYSCTL->RCGCTIMER |= R0;
 	disable_timer();
-	TIMER0->CFG |= CFG_16_BIT;						//16 bit mode
+	TIMER0->CFG |= CFG_16_BIT;								//16 bit mode
 	TIMER0->TAMR |= (ONE_SHOT | TACDIR);			//ONE SHOT mode, count up
 	#if defined(SECONDS)
 	TIMER0->TAPR = SECONDS_PRESCALE - 1;
@@ -44,23 +35,13 @@ void TIMER0A_Handler(void)
 		GPIOF->DATA |= LED_GREEN;
 	}
 	TIMER0->ICR |= TATOCINT;
-	#if defined(SECONDS)
-	if (3 * seconds <= handler_counter)
+	if (3 * delay <= handler_counter)
 	{
 		if(is_indicator_enabled)
 		{
 			GPIOF->DATA &= ~LED_GREEN;
 		}
 	}
-	#elif defined(MILLISECONDS)
-	if (3 * milliseconds <= handler_counter)
-	{
-		if(is_indicator_enabled)
-		{
-			GPIOF->DATA &= ~LED_GREEN;
-		}
-	}
-	#endif
 }		
 
 void use_indicator(void)
