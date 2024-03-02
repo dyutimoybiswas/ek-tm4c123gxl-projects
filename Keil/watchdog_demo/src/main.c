@@ -1,16 +1,11 @@
+#include <stdbool.h>
+#include <stdlib.h>
 #include "watchdog.h"
 
-#if defined(MILLISECONDS)
 void delay(unsigned int n)
 {
-	for(unsigned volatile int i = 0; i < MILISECONDS_CONSTANT * n; i++);
+	for(unsigned volatile int i = 0; i < CONSTANT * n; i++);
 }
-#elif defined(SECONDS)
-void delay(unsigned int n)
-{
-	for(unsigned volatile int i = 0; i < SECONDS_CONSTANT * n; i++);
-}
-#endif
 
 void gpio_init(void)
 {
@@ -52,6 +47,6 @@ int main(void)
 		}
 		WATCHDOG0->LOAD = WDT_LOADVALUE;		//adjust the load value to trigger interrupt, keeping delay constant. If execution reaches here before delay, normal operation.
 		enable_watchdog0_interrupt();			//triggers interrupt if value = 0 while delay is executed.
-		delay(delay_time);						//adjust the delay to trigger interrupt, keeping load value constant. Argument can be random or a constant value.
+		delay(delay_time);				//adjust the delay to trigger interrupt, keeping load value constant. Argument can be random or a constant value.
 	}
 }
