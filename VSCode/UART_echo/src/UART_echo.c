@@ -53,13 +53,13 @@ void setup()
     UARTEnable(UART0_BASE);
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     setup();
 
     while (true)
     {
-        // listen for input
+        // Listen for input
     }
     
     return 0;
