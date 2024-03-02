@@ -2,7 +2,6 @@
 #define WATCHDOG_H
 
 #include "TM4C123GH6PM.h"
-#include <stdlib.h>
 
 #define W0                      1U
 #define RESEN                   1U << 1
@@ -17,13 +16,12 @@ void watchdog_init(void);
 void gpio_init(void);
 void WDT0_Handler(void);
 void enable_watchdog0_interrupt(void);
+void delay(unsigned int);
 
 #if defined(MILLISECONDS)
 #define CONSTANT    1000
-void delay_milliseconds(unsigned int);
 #elif defined(SECONDS)
-#define CONSTANT        1000000
-void delay_seconds(unsigned int);
+#define CONSTANT    1000000
 #endif
 
 #endif
