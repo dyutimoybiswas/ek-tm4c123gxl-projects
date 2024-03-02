@@ -1,6 +1,8 @@
 #ifndef UART_LOGGING_H
 #define UART_LOGGING_H
 
+#include <stdbool.h>
+
 #define BAUD_RATE   115200
 #define NULL_CHAR   '\0'
 

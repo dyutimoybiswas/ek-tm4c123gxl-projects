@@ -1,4 +1,3 @@
-#include <stdbool.h>
 #include "switches.h"
 #include "uart_logging.h"
 #include "hibernate_mode.h"

@@ -1,10 +1,8 @@
-#include <stdbool.h>
-#include <stdint.h>
-#include "driverlib/sysctl.h"
-#include "driverlib/hibernate.h"
 #include "uart_logging.h"
 #include "hibernate_mode.h"
 #include "switches.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/hibernate.h"
 
 
 void hibernate_handler(void)
