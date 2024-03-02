@@ -60,7 +60,7 @@ void hibernate_setup(void)
 		#endif
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     // set processor clock frequency = 16 MHz.
     SysCtlClockSet(SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
@@ -90,9 +90,6 @@ int main(int argc, char const *argv[])
 	
     while (true)
     {
-        //TODO
+        // Do nothing.
     }
-    
-
-    return 0;
 }
