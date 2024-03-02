@@ -1,6 +1,6 @@
 #include "blinky_RGB.h"
 
-void setup()
+void setup(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);        // enable port F
     while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
@@ -11,15 +11,15 @@ void setup()
     GPIOPinTypeGPIOOutput(GPIO_PORTF_AHB_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);   // configure RGB pins as output
 }
 
-void delay()
+void delay(void)
 {
     for (uint32_t i = 0; i < 200000; i++)
     {
-        // do nothing
+        // Do nothing.
     }
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     setup();    // setup pins
 
@@ -43,6 +43,4 @@ int main(int argc, char const *argv[])
         GPIOPinWrite(GPIO_PORTF_AHB_BASE, GPIO_PIN_3, 0);
         delay();
     }
-    
-    return 0;
 }

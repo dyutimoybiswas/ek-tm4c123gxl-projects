@@ -1,0 +1,2 @@
+Execute the run_project script to generate flashable binary files.
+Use a tool like TI Uniflash to flash the binary into the board and observe the output.

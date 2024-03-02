@@ -25,7 +25,7 @@ void gpio_setup(void)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_AHB_BASE, GPIO_PIN_3);         // configure green LED pin as output
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     // Set system clock
     SysCtlClockSet(SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
@@ -35,7 +35,6 @@ int main(int argc, char const *argv[])
 
     while (true)
     {
-        // TODO
+        // Do nothing.
     }
-    return 0;
 }

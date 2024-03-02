@@ -11,8 +11,8 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/uart.h"
 
-#define GREEN_LED GPIO_PIN_3
-#define BAUD_RATE 115200
+#define GREEN_LED       GPIO_PIN_3
+#define BAUD_RATE       115200
 
 void setup();
 

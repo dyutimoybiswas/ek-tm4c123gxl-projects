@@ -1,10 +1,8 @@
-#include <stdbool.h>
-#include <stdint.h>
-#include "driverlib/sysctl.h"
-#include "driverlib/hibernate.h"
 #include "uart_logging.h"
 #include "hibernate_mode.h"
 #include "switches.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/hibernate.h"
 
 
 void hibernate_handler(void)
@@ -60,7 +58,7 @@ void hibernate_setup(void)
 		#endif
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     // set processor clock frequency = 16 MHz.
     SysCtlClockSet(SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
@@ -90,9 +88,6 @@ int main(int argc, char const *argv[])
 	
     while (true)
     {
-        //TODO
+        // Do nothing.
     }
-    
-
-    return 0;
 }

@@ -1,6 +1,6 @@
 #include "timer_int.h"
 
-void timer_handler()    // for static compilation add this to interrupt vector table in startup
+void timer_handler(void)    // for static compilation add this to interrupt vector table in startup
 {
     //toggle blue LED
     value ^= BLUE_LED;
@@ -8,7 +8,7 @@ void timer_handler()    // for static compilation add this to interrupt vector t
     TimerIntClear(TIMER3_BASE, TIMER_TIMB_TIMEOUT);
 }
 
-void setup()
+void setup(void)
 {
     // set system clock frequency
     SysCtlClockSet(SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
@@ -41,20 +41,20 @@ void setup()
     TimerEnable(TIMER3_BASE, TIMER_B);
 }
 
-int main(int argc, char const *argv[])
+int main(void)
 {
     setup();
     
     while (true)
     {
         //uncomment below if not registering interrupt handler
-        // if (TimerIntStatus(TIMER3_BASE, false) & TIMER_TIMB_TIMEOUT)
-        // {
-        //     value ^= BLUE_LED;
-        //     // value = BLUE_LED;
-        //     GPIOPinWrite(GPIO_PORTF_AHB_BASE, BLUE_LED, value);   
-        //     TimerIntClear(TIMER3_BASE, TIMER_TIMB_TIMEOUT);         
-        // }
+        /*if (TimerIntStatus(TIMER3_BASE, false) & TIMER_TIMB_TIMEOUT)
+        {
+            value ^= BLUE_LED;
+            // value = BLUE_LED;
+            GPIOPinWrite(GPIO_PORTF_AHB_BASE, BLUE_LED, value);   
+            TimerIntClear(TIMER3_BASE, TIMER_TIMB_TIMEOUT);         
+        }*/
     }
     
     return 0;

@@ -1,4 +1,3 @@
-#include <stdbool.h>
 #include "color_generator.h"
 
 
