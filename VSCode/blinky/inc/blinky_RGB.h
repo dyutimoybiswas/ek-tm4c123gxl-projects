@@ -7,7 +7,7 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 
-void setup();
-void delay();
+void setup(void);
+void delay(void);
 
 #endif
