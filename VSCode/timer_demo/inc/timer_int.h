@@ -10,11 +10,11 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/timer.h"
 
-#define PRESCALE 255
-#define BLUE_LED GPIO_PIN_2
+#define PRESCALE            255
+#define BLUE_LED            GPIO_PIN_2
 
-void setup();
+void setup(void);
 
-volatile uint8_t value = 0;
+static volatile uint8_t value = 0;
 
 #endif
