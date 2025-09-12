@@ -21,7 +21,7 @@ Projects in this folder were run using **Keil uVision ver. 5.33** on **Windows 1
   - Red LED = unsafe range  
   - Green LED = safe range
 
-- **[adc_voltage_measurement](#adc_voltage_measurement)**  
+- **[adc_voltage_measurement](adc_voltage_measurement/)**  
   Measures voltage between 0 to 3.3 V by connecting potentiometer output to PE2 pin.
 
 - **[external_reset](external_reset/)**  
