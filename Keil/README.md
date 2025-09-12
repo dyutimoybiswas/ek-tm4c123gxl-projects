@@ -73,7 +73,7 @@ Projects in this folder were run using **Keil uVision ver. 5.33** on **Windows 1
   - SW2 = red LED
 
 - **[uart_ftdi_echo](#uart_ftdi_echo)**  
-  Refer to [README.md](#README.md).
+  Refer to [README.md](./uart_ftdi_echo/README.md).
 
 - **[watchdog_demo](#watchdog_demo)**  
   Watchdog timer loads a value inside the while loop and counts down to 0.  
