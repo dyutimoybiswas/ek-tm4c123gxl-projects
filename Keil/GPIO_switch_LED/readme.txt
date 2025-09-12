@@ -1,1 +1,0 @@
-Toggling switch turns on/off LED blinking.

@@ -1,1 +1,0 @@
-To trigger reset externally using RST pin.

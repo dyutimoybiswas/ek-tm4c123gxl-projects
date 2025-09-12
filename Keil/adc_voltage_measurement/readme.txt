@@ -1,1 +1,0 @@
-Measures voltage between 0 to 3.3 V by connecting potentiometer output to PE2 pin.

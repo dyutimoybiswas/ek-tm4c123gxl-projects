@@ -1,1 +1,0 @@
-Code to blink on-board RGB LEDs in intervals of some delay, in the order Red, Blue and Green.

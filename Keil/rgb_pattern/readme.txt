@@ -1,1 +1,0 @@
-Displays pattern of colors on RGB LEDs.

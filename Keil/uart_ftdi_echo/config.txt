@@ -1,4 +1,0 @@
-Project config information:
-
-1. Manage runtime environment: Select CMSIS:Core and Device:Startup
-2. Options for Target <...>: Choose Stellaris ICDI under Use in Debug tab.
