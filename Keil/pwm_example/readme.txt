@@ -1,1 +1,0 @@
-Blinks on-board blue LED based on duty cycle of PWM signal

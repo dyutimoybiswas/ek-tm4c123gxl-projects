@@ -1,1 +1,0 @@
-Demo to customize system frequency and blinking on-board blue LED at different frequencies.

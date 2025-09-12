@@ -1,1 +1,0 @@
-To control brightness of on-board red LED from minimum to maximum.

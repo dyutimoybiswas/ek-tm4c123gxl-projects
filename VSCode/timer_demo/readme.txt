@@ -1,1 +1,0 @@
-Code to blink the on-board blue LED by configuring a timer in 16-bit periodic count-down mode.
