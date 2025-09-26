@@ -1,3 +1,4 @@
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 include(CMakeForceCompiler)
 
 #Set cross compilation information
@@ -18,7 +19,7 @@ set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
 set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
 
 # Tivaware files
-set(TIVAWARE_PATH "$ENV{HOME}/Tiva_C/SW_kit")
+set(TIVAWARE_PATH "${CMAKE_SOURCE_DIR}/tivaware")
 include_directories(${TIVAWARE_PATH})
 
 # Processor specific definitions

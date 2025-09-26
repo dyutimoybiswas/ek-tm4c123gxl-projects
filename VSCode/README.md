@@ -2,8 +2,12 @@
 Projects in this folder were run using **Microsoft Visual Studio Code** in **Debian OS**.
 
 ## Project Configuration
-Execute the run_project script to generate flashable binary files.
-Use a tool like TI Uniflash to flash the binary into the board and observe the output.
+- Install `arm-none-eabi` cross-compiler.
+- Install [wine](https://www.winehq.org/)
+- Download the software kit (.exe) from [TI's official site](https://www.ti.com/tool/EK-TM4C123GXL?keyMatch=tm4c123gxl&tisearch=universal_search) and execute it using `wine`.
+- Put the generated contents inside the VSCode directory.
+- Execute the run_project script to generate flashable binary files.
+- Use a tool like TI Uniflash to flash the binary into the board and observe the output.
 
 
 ## Project List
