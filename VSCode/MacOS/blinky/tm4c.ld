@@ -1,4 +1,3 @@
-/* taken from SW_kit examples */
 
 MEMORY
 {
@@ -14,6 +13,8 @@ SECTIONS
         KEEP(*(.isr_vector))
         *(.text*)
         *(.rodata*)
+        KEEP (*(.init))
+        KEEP (*(.fini))
         _etext = .;
     } > FLASH
 
