@@ -2,6 +2,7 @@ include(CMakeForceCompiler)
 
 #Set cross compilation information
 set(CMAKE_SYSTEM_NAME Generic)
+# set(CMAKE_SYSTEM_PROCESSOR arm)
 
 # GCC toolchain prefix
 set(TOOLCHAIN_PREFIX arm-none-eabi)
@@ -17,8 +18,11 @@ set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
 set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
 
 # Tivaware files
-set(TIVAWARE_PATH "$ENV{HOME}/Tiva_C/SW_kit")
+set(TIVAWARE_PATH "$ENV{TIVAWARE_PATH}")
 include_directories(${TIVAWARE_PATH})
+
+# Modify below to generate second/millisecond delay.
+add_definitions(-DSECOND)
 
 # Processor specific definitions
 add_definitions(-DPART_TM4C123GH6PM)

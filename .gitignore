@@ -51,5 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# MacOS-related
+.DS_Store
+
 # Custom
 .vscode/

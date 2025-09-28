@@ -17,7 +17,7 @@ set(CMAKE_C_COMPILER ${TOOLCHAIN_PREFIX}-gcc)
 set(CMAKE_CXX_COMPILER ${TOOLCHAIN_PREFIX}-g++)
 
 # Tivaware files
-set(TIVAWARE_PATH "$ENV{HOME}/Tiva_C/SW_kit")
+set(TIVAWARE_PATH "$ENV{TIVAWARE_PATH}")
 include_directories(${TIVAWARE_PATH})
 
 # Processor specific definitions
