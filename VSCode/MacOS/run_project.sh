@@ -9,7 +9,7 @@ if [ -z "$(docker images | grep "tiva-$PROJECT_NAME")" ]; then
 fi
 
 # run the image
-docker run --rm -v ../../../:/repo -w /repo/VSCode/MacOS/$PROJECT_NAME tiva-$PROJECT_NAME make clean all
+docker run --rm -v "$(pwd)/../../../:/repo" -w /repo/VSCode/MacOS/$PROJECT_NAME tiva-$PROJECT_NAME make clean all
 
 # flash the binary, if build was successful
 if [ $? -eq 0 ]; then
