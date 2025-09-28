@@ -1,4 +1,3 @@
-set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 include(CMakeForceCompiler)
 
 #Set cross compilation information
