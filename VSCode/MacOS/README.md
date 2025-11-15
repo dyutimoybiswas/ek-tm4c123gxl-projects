@@ -4,6 +4,15 @@
 - Connect the board to the computer.
 - Execute the [run_project.sh](run_project.sh) script with project name as argument. This generates flashable binaries in a `build` directory within the project directory, and flashes the `elf` file to the board.
 
+## Debugging
+- Remove `exit` from openocd command options in [run_project.sh](run_project.sh)
+- Execute [run_project.sh](run_project.sh) script as mentioned above
+- In a new terminal window, execute `arm-none-eabi-gdb <project_name>.elf`
+- Inside `gdb`, run below commands in order:
+    - `target remote localhost:3333` (to connect to board)
+    - `load` (to flash the binary)
+    - `monitor reset halt`
+- Now that debugging session is ready, set breakpoints and continue to debug
 
 ## Project List
 
