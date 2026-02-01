@@ -1,6 +1,6 @@
 # capture the first argument as project name and navigate to the project directory
-PROJECT_NAME="$1"
-cd "$PROJECT_NAME"
+PROJECT_NAME=$1
+cd $PROJECT_NAME
 
 # check if docker daemon is running, if not start it
 if ! docker info > /dev/null 2>&1; then
@@ -20,9 +20,9 @@ if [ -z "$(docker images | grep "tiva-$PROJECT_NAME")" ]; then
 fi
 
 # run the image
-docker run --rm -v "$(pwd)/../../../:/repo" -w /repo/VSCode/MacOS/$PROJECT_NAME tiva-$PROJECT_NAME make clean all
+docker run --rm -v "$(pwd)/../../../../:/repo" -w /repo/VSCode/MacOS/loopback/$PROJECT_NAME tiva-$PROJECT_NAME make clean all
 
 # flash the binary, if build was successful
 if [ $? -eq 0 ]; then
-    openocd -f board/ti_ek-tm4c123gxl.cfg -c "program build/$PROJECT_NAME.elf verify reset exit"
+    openocd -f board/ti_ek-tm4c123gxl.cfg -c "program build/$PROJECT_NAME.elf verify reset"
 fi

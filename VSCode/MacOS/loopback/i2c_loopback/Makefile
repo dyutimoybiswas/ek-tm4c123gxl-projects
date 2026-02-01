@@ -1,4 +1,4 @@
-TIVAWARE := $(CURDIR)/../tivaware
+TIVAWARE := $(CURDIR)/../../tivaware
 BUILD    := build
 PROJECT_NAME := i2c_loopback
 
