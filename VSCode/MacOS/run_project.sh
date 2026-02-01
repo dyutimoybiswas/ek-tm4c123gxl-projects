@@ -1,6 +1,6 @@
 # capture the first argument as project name and navigate to the project directory
-PROJECT_NAME=$1
-cd $PROJECT_NAME
+PROJECT_NAME="$1"
+cd "$PROJECT_NAME"
 
 # check if docker daemon is running, if not start it
 if ! docker info > /dev/null 2>&1; then
