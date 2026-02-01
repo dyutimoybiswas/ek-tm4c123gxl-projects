@@ -27,3 +27,5 @@ of ~1 sec.
 Refer corresponding [README](lcd/README.md)
 ### [udma](udma/)
 Refer corresponding [README](udma/README.md)
+### [freertos_blinky](freertos_blinky/)
+Demonstrates FreeRTOS **v8.2.3** (bundled with TivaWare) using binary semaphores to synchronize 3 tasks that blink the on-board RGB LED in R→G→B sequence. Each LED: 300ms on, 300ms off (configurable).
